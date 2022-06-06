@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>ANMOL - 19BCE0891</title>
+  </head>
+
+  <body>
+    <center>
+      <form action="#">
+        <h1>DUPLICACY IN LIST</h1>
+        Input a number :
+        <input type="number" name="" id="num" />
+        <br /><br />
+
+        <button onclick="check()">check number</button>
+        <br /><br />
+
+        <h3 style="color: blue" id="out">List :</h3>
+
+        <h1 style="color: green" id="status"></h1>
+      </form>
+    </center>
+  </body>
+
+  <script>
+    var inpNums = [];
+
+    function check() {
+      var inp = parseInt(document.getElementById("num").value);
+
+      if (inpNums.includes(inp)) {
+        document.getElementById("status").innerHTML = "DUPLICATE";
+        document.getElementById("status").style.color = "red";
+
+        document.getElementById("num").disabled = true;
+      } else {
+        inpNums.push(inp);
+
+        let text = inpNums.toString();
+        document.getElementById("out").innerHTML = "List : " + inpNums;
+        document.getElementById("status").innerHTML = "UNIQUE";
+      }
+    }
+  </script>
+</html>

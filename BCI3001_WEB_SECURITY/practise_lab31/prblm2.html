@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>ANMOL - 19BCE0891</title>
+  </head>
+  <body>
+    <h1>Odd/Even</h1>
+    Enter num :
+    <input type="number" id="val" />
+    <br /><br />
+
+    <button onclick="check()">check</button>
+
+    <h2 id="output" style="color: green"></h2>
+  </body>
+
+  <script>
+    function check() {
+      var num = document.getElementById("val").value;
+
+      if (num % 2 == 0) {
+        document.getElementById("output").innerHTML = num + " is Even";
+      } else {
+        document.getElementById("output").innerHTML = num + " is Odd";
+      }
+    }
+  </script>
+</html>

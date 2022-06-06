@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>ANMOL - 19BCE0891</title>
+  </head>
+  <body>
+    <form>
+      Name : <input type="text" id="name" /> <br /><br />
+      Age : <input type="number" id="age" /> <br /><br />
+      Phone number : <input type="text" id="phno" /> <br /><br />
+      Password : <input type="password" id="pass" /> <br /><br />
+      Confirm Password : <input type="password" id="cpass" /> <br /><br />
+
+      <button onclick="validate()">Validate</button>
+    </form>
+  </body>
+  <script>
+    function validate() {
+      name = document.getElementById("name").value;
+      age = document.getElementById("age").value;
+      phno = document.getElementById("phno").value;
+      pass = document.getElementById("pass").value;
+      cpass = document.getElementById("cpass").value;
+
+      if (name == "" || age == "" || phno == "" || pass == "" || cpass == "") {
+        alert("Empty fields not allowed!!");
+        return false;
+      }
+
+      if (name.length < 5 || name.length > 15) {
+        alert("Name length should be in 5 to 15 range");
+        return false;
+      }
+
+      if (age < 18) {
+        alert("Age should >18 and non-negative");
+        return false;
+      }
+
+      if (phno.length != 10) {
+        alert("Phone no. should be of 10 digits");
+        return false;
+      }
+
+      if (pass !== cpass) {
+        alert("Password not confirmed");
+        return false;
+      }
+    }
+  </script>
+  <script></script>
+</html>

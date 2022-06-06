@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>ANMOL - 19BCE0891</title>
+  </head>
+  <body>
+    <h1>Sum of n numbers</h1>
+    Enter num :
+    <input type="number" id="val" />
+    <br /><br />
+
+    <button onclick="findSum()">find sum</button>
+
+    <h2 id="output" style="color: blue"></h2>
+  </body>
+
+  <script>
+    function findSum() {
+      var num = document.getElementById("val").value;
+
+      var sum = 0;
+      for (var i = 1; i <= num; i++) {
+        sum += i;
+      }
+
+      document.getElementById("output").innerHTML =
+        "Sum of " + num + " numbers is : " + sum;
+    }
+  </script>
+</html>

@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>ANMOL - 19BCE0891</title>
+  </head>
+  <body>
+    <h1>Factorial of number</h1>
+    Enter num :
+    <input type="number" id="val" />
+    <br /><br />
+
+    <button onclick="findFact()">factorial !</button>
+
+    <h2 id="output" style="color: green"></h2>
+  </body>
+
+  <script>
+    function findFact() {
+      var num = document.getElementById("val").value;
+
+      var fact = 1;
+      for (var i = 1; i <= num; i++) {
+        fact = fact * i;
+      }
+
+      document.getElementById("output").innerHTML =
+        "Factorial of " + num + " is : " + fact;
+    }
+  </script>
+</html>

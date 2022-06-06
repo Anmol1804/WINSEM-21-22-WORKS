@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>ANMOL - 19BCE0901</title>
+  </head>
+  <body>
+    <center>
+      <h1>BMI Calculator</h1>
+
+      <form action="#">
+        ENTER HEIGHT :
+        <input type="text" placeholder="in cm" id="ht" />
+        <br /><br />
+
+        ENTER WEIGHT :
+        <input type="text" placeholder="in kg" id="wt" />
+        <br /><br />
+
+        <button onclick="bmi()" id="btn">Calculate</button>
+        <h3 id="bmiVal" style="color: blue"></h3>
+        <h2 id="status" style="color: red"></h2>
+      </form>
+    </center>
+  </body>
+
+  <script>
+    function bmi() {
+      var ht = Number(document.getElementById("ht").value);
+      var wt = Number(document.getElementById("wt").value);
+
+      var bmi = (wt / ((ht * ht) / 10000)).toFixed(2);
+
+      document.getElementById("bmiVal").innerHTML = "BMI is : " + bmi;
+      if (bmi < 16) {
+        document.getElementById("status").innerHTML = "SERIOULSY UNDERWEIGHT";
+        document.getElementById("status").style.color = "red";
+      } else if (bmi >= 16 && bmi < 18) {
+        document.getElementById("status").innerHTML = "UNDERWEIGHT";
+        document.getElementById("status").style.color = "red";
+      } else if (bmi >= 18 && bmi < 24) {
+        document.getElementById("status").innerHTML = "NORMAL WEIGHT";
+        document.getElementById("status").style.color = "green";
+      } else if (bmi >= 24 && bmi < 29) {
+        document.getElementById("status").innerHTML = "OVERWEIGHT";
+        document.getElementById("status").style.color = "red";
+      } else if (bmi >= 29 && bmi < 35) {
+        document.getElementById("status").innerHTML = "SERIOULSY OVERWEIGHT";
+        document.getElementById("status").style.color = "red";
+      } else if (bmi >= 35) {
+        document.getElementById("status").innerHTML = "GRAVELY OVERWEIGHT";
+        document.getElementById("status").style.color = "red";
+      }
+    }
+  </script>
+</html>
